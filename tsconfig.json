@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
+
+  "compilerOptions": {
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true
+  },
+
+  "include": ["src/**/*"]
+}
