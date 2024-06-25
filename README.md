@@ -127,10 +127,9 @@ The component above receives the four ```connect``` properties and implements th
 
 ## Examples
 
-*To write...*
+In the [examples directory](examples/), you can find two projects that use the library: one in [JavaScript](examples/javascript/) and another in [TypeScript](examples/typescript/). The examples show how to load initial data into the form and programmatically update an attribute using both the **```useForm```** hook and the **```Form```** component.
 
 ## Types and Reference
 
 *To write...*
 
----
