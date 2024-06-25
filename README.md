@@ -8,7 +8,7 @@ Or have a input display a certain kind of data, but work with a different object
 
 ### How does it work
 
-In Alya Forms your input data is stored in an ```Attribute```. The attribute consists of an object with two properties, ```display``` and ```value```, as presented below:
+In Alya Forms your input data is stored in an ```AlyaFormAttribute```. The attribute consists of an object with two properties, ```display``` and ```value```, as presented below:
 
 ```javascript
 { display: 'Carlos Eduardo', value: '507f1f77bcf86cd799439011' } 
