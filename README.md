@@ -10,7 +10,7 @@ Or have a input display a certain kind of data, but work with a different object
 
 In Alya Forms your input data is stored in an ```AlyaFormAttribute```. The attribute consists of an object with two properties, ```display``` and ```value```, as presented below:
 
-```javascript
+```typescript
 { display: 'Carlos Eduardo', value: '507f1f77bcf86cd799439011' } 
 ```
 
@@ -26,7 +26,7 @@ The library provides you two exports:
 
   - The **```useForm```** hook, recommended for creating custom forms that take advantage of the library full resources. Like reacting to ```data``` changes and updating values programatically with ```update```.
 
-  ```javascript
+  ```typescript
   const { data, connect, update, reset } = useForm({ initialData: initialData })
   ```
 
@@ -49,15 +49,58 @@ To use both you'll need to implement the ```connect``` api into your inputs firs
 
 To connect an input the library provides you with the method ```connect```:
 
-```javascript
+```typescript
 <YourInput {...connect('firstName')} type="text" placeholder="First name"/>
 ```
 
-This method exposes the properties ```name``` and ```attribute```, the hook ```useAttribute``` and the method ```setAttribute```.
+This method exposes the properties ```name``` and ```attribute```, the hook ```useAttribute``` and the method ```setAttribute```:
 
 - ```name``` it's the name of the attribute in the ```data``` object (represented by *firstName* in the example above).
 - ```attribute``` it's the value of the attribute in the ```data``` object.
 - ```useAttribute``` it's a hook to initialize the attribute in the ```data``` object.
 - ```setAttribute``` it's a function to set the value of the attribute in the ```data``` object.
 
+A basic typescript input component implementing these properties would look like this:
+
+
+```typescript
+import React, { forwardRef, memo } from 'react'
+
+import type { AlyaFormConnect, AlyaFormAttribute } from 'alya-forms'
+
+type SimpleInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaFormConnect & {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaFormAttribute) => void
+}
+
+const SimpleInput = memo(forwardRef<HTMLInputElement, SimpleInputProps>(function ({
+  name,
+  attribute = {},
+  setAttribute,
+  useAttribute,
+  onChange,
+  ...props
+}, ref) {
+
+  useAttribute()
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const inputValue = event.target.value
+    const attribute = { display: inputValue, value: inputValue }
+
+    setAttribute(attribute)
+
+    if (onChange) onChange(event, attribute)
+  }
+
+  return (
+    <input
+      {...props}
+      name={name}
+      value={attribute.display || ''}
+      onChange={handleChange}
+      ref={ref}
+    />
+  )
+}))
+```
 
