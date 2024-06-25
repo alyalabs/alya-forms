@@ -16,7 +16,8 @@ In Alya Forms your input data is stored in an ```Attribute```. The attribute con
 
 The ```display``` property is the one that the user sees and the ```value``` is the one that only you will see and work with.
 
-Let's say that were coding a input that searchs for a person in the database as the user types on it. The data of this input can be represented as the example above. The user will see the name of the person in the input, but the application will have his id internally to send to the backend when needed.
+> [!TIP]
+> Let's say that were coding a input that searchs for a person in the database as the user types on it. The data of this input can be represented as the example above. The user will see the name of the person in the input, but the application will have his id internally to send to the backend when needed.
 
 
 ### How can I implement it
