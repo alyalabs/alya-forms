@@ -6,7 +6,8 @@
     "react",
     "forms",
     "library",
-    "hook",
+    "hooks",
+    "typescript",
     "input"
   ],
   "homepage": "https://github.com/alyalabs/alya-forms#readme",
@@ -15,10 +16,12 @@
   },
   "license": "",
   "author": "Carlos Eduardo Barbosa de Almeida",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/alyalabs/alya-forms.git"
+    "url": "git+https://github.com/alyalabs/alya-forms.git"
   },
   "scripts": {
     "clear": "rimraf dist",
