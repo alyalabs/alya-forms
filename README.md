@@ -33,14 +33,14 @@ The library provides you two exports:
   - The **```Form```** component, recommended for simpler forms when you just need to submit the data.
 
   ```typescript
-    <Form onSubmit={handleSubmit}
-      render={(form: AlyaForm) => (
-        <>
-          <YourInput {...form.connect('firstName')} type="text" placeholder="First name"/>
-          <button type="submit">Submit</button>
-        </>
-      )}
-    />
+  <Form onSubmit={handleSubmit}
+    render={(form: AlyaForm) => (
+      <>
+        <YourInput {...form.connect('firstName')} type="text" placeholder="First name"/>
+        <button type="submit">Submit</button>
+      </>
+    )}
+  />
   ```
 
 To use both you'll need to implement the ```connect``` api into your inputs first:
