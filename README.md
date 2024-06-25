@@ -47,13 +47,13 @@ To use both you'll need to implement the ```connect``` api into your inputs firs
 
 ### Connecting an input
 
-To connect an input to your form the library provides you with the method ```connect```:
+To connect an input the library provides you with the method ```connect```:
 
 ```javascript
 <YourInput {...connect('firstName')} type="text" placeholder="First name"/>
 ```
 
-This method exposes the properties ```name``` and ```attribute```, the hook ```useAttribute``` and the function ```setAttribute```.
+This method exposes the properties ```name``` and ```attribute```, the hook ```useAttribute``` and the method ```setAttribute```.
 
 - ```name``` it's the name of the attribute in the ```data``` object (represented by *firstName* in the example above).
 - ```attribute``` it's the value of the attribute in the ```data``` object.
