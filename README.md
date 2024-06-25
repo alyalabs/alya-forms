@@ -2,35 +2,34 @@
 
 Have you ever needed to show something to the user and send something else to the server?
 <br>
-Or have a input display a certain kind of data, but work with a different object internally?
+Or have an input display a certain kind of data, but work with a different object internally?
 <br>
 **Alya Forms can help you achieve that!**
 
 ### How does it work
 
-In Alya Forms your input data is stored in an ```AlyaFormAttribute```. The attribute consists of an object with two properties, ```display``` and ```value```, as presented below:
+In Alya Forms, your input data is stored in an ```AlyaFormAttribute```. The attribute consists of an object with two properties, ```display``` and ```value```, as shown below:
 
 ```typescript
 { display: 'Carlos Eduardo', value: '507f1f77bcf86cd799439011' } 
 ```
 
-The ```display``` property is the one that the user sees and the ```value``` is the one that only you will see and work with.
+The ```display``` property is the one that the user sees, and the ```value``` is the one that only you will see and work with.
 
 > <sup>**For example:**</sup><br>
-> Let's say that we're coding an input that searchs for a person in the database as the user types on it. The data of this input can be represented as the example above. The user will see the name of the person in the input, but the application will have his id internally to send to the backend when needed.
-
+> Let's say that we're coding an input that searches for a person in the database as the user types in it. The data of this input can be represented as in the example above. The user will see the name of the person in the input, but the application will have their ID internally to send to the backend when needed.
 
 ### How can I implement it
 
-The library provides you two exports:
+The library provides you with two exports:
 
-  - The **```useForm```** hook, recommended for creating custom forms that take advantage of the library full resources. Like reacting to ```data``` changes and updating values programatically with ```update```.
+- The **```useForm```** hook, recommended for creating custom forms that take advantage of the library's full resources, such as reacting to ```data``` changes and updating values programmatically with ```update```.
 
   ```typescript
   const { data, connect, update, reset } = useForm({ initialData: initialData })
   ```
 
-  - The **```Form```** component, recommended for simpler forms when you just need to submit the data.
+- The **```Form```** component, recommended for simpler forms when you just need to submit the data.
 
   ```typescript
   <Form onSubmit={handleSubmit}
@@ -43,25 +42,24 @@ The library provides you two exports:
   />
   ```
 
-To use both you'll need to implement the ```connect``` api into your inputs first:
+To use both, you'll need to implement the ```connect``` API into your inputs first:
 
 ### Connecting an input
 
-To connect an input the library provides you with the method ```connect```:
+To connect an input, the library provides you with the method ```connect```:
 
 ```typescript
 <YourInput {...connect('firstName')} type="text" placeholder="First name"/>
 ```
 
-This method exposes the properties ```name``` and ```attribute```, the hook ```useAttribute``` and the method ```setAttribute```:
+This method exposes the properties ```name``` and ```attribute```, the hook ```useAttribute```, and the method ```setAttribute```:
 
-- ```name``` it's the name of the attribute in the ```data``` object (represented by *firstName* in the example above).
-- ```attribute``` it's the value of the attribute in the ```data``` object.
-- ```useAttribute``` it's a hook to initialize the attribute in the ```data``` object.
-- ```setAttribute``` it's a function to set the value of the attribute in the ```data``` object.
+- ```name``` is the name of the attribute in the ```data``` object (represented by *firstName* in the example above).
+- ```attribute``` is the value of the attribute in the ```data``` object.
+- ```useAttribute``` is a hook to initialize the attribute in the ```data``` object.
+- ```setAttribute``` is a function to set the value of the attribute in the ```data``` object.
 
-A basic typescript input component implementing these properties would look like this:
-
+A basic TypeScript input component implementing these properties would look like this:
 
 ```typescript
 import React, { forwardRef, memo } from 'react'
@@ -104,3 +102,4 @@ const YourInput = memo(forwardRef<HTMLInputElement, YourInputProps>(function ({
 }))
 ```
 
+---
