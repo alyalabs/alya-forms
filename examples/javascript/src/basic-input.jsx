@@ -1,8 +1,6 @@
 import React, { forwardRef, memo } from 'react'
-import clsx from 'clsx'
 
-const BaseInput = memo(forwardRef(function ({
-  className,
+const BasicInput = memo(forwardRef(function ({
   name,
   attribute = {},
   setAttribute,
@@ -23,16 +21,14 @@ const BaseInput = memo(forwardRef(function ({
   }
 
   return (
-    <div className={clsx('input', className)}>
-      <input
-        {...props}
-        name={name}
-        value={attribute.display || ''}
-        onChange={handleChange}
-        ref={ref}
-      />
-    </div>
+    <input
+      {...props}
+      name={name}
+      value={attribute.display || ''}
+      onChange={handleChange}
+      ref={ref}
+    />
   )
 }))
 
-export default BaseInput
+export default BasicInput

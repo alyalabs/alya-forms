@@ -43,6 +43,8 @@ const Form = forwardRef<HTMLFormElement, AlyaFormProps>(function ({
     if (onSubmit) {
       onSubmit(form.data)
     }
+    
+    form.reset()
   }
 
   return (

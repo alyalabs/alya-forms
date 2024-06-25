@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { Form } from '../../../dist'
 
-import BaseInput from './base-input'
+import BasicInput from './basic-input'
 
 export default function UseFormExample() {
   const [initialData, setInitialData] = useState({
@@ -33,13 +33,16 @@ export default function UseFormExample() {
         onSubmit={handleSubmit}
         render={(form) => (
           <>
-            <BaseInput {...form.connect('name')} className="some-input-class" type="text" placeholder="Name"/>
-            <BaseInput {...form.connect('postalCode')} className="some-input-class" type="text" placeholder="Postal Code" onChange={(event, attribute) => handlePostalCodeChange(event, attribute, form)}/>
-            <BaseInput {...form.connect('address')} className="some-input-class" type="text" placeholder="Address"/>
-            <button type="submit">Submit</button>
-            <button type="button" onClick={(event) => handleReset(event, form)}>Reset</button>
+            <BasicInput {...form.connect('name')} type="text" placeholder="Name"/>
+            <BasicInput {...form.connect('postalCode')} type="text" placeholder="Postal Code" onChange={(event, attribute) => handlePostalCodeChange(event, attribute, form)}/>
+            <BasicInput {...form.connect('address')} type="text" placeholder="Address"/>
+            <div>
+              <button type="submit">Submit</button>
+              <button type="button" onClick={(event) => handleReset(event, form)}>Reset</button>
+            </div>
           </>
         )}
+        style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'flex-start' }}
       />
     </>
   )

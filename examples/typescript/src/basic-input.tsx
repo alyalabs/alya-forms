@@ -1,14 +1,12 @@
 import React, { forwardRef, memo } from 'react'
-import clsx from 'clsx'
 
 import type { AlyaFormConnect, AlyaFormAttribute } from '../../../dist'
 
-type BaseInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaFormConnect & {
+type BasicInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaFormConnect & {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaFormAttribute) => void
 }
 
-const BaseInput = memo(forwardRef<HTMLInputElement, BaseInputProps>(function ({
-  className,
+const BasicInput = memo(forwardRef<HTMLInputElement, BasicInputProps>(function ({
   name,
   attribute = {},
   setAttribute,
@@ -29,16 +27,14 @@ const BaseInput = memo(forwardRef<HTMLInputElement, BaseInputProps>(function ({
   }
 
   return (
-    <div className={clsx('input', className)}>
-      <input
-        {...props}
-        name={name}
-        value={attribute.display || ''}
-        onChange={handleChange}
-        ref={ref}
-      />
-    </div>
+    <input
+      {...props}
+      name={name}
+      value={attribute.display || ''}
+      onChange={handleChange}
+      ref={ref}
+    />
   )
 }))
 
-export default BaseInput
+export default BasicInput

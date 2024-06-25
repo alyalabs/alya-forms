@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from '../../../dist'
 import type { AlyaFormData, AlyaFormAttribute } from '../../../dist'
 
-import BaseInput from './base-input'
+import BasicInput from './basic-input'
 
 export default function UseFormHookExample() {
   const [initialData, setInitialData] = useState<AlyaFormData>({
@@ -44,12 +44,14 @@ export default function UseFormHookExample() {
       <h1>Alya Forms</h1>
       <a href="/">Go back</a>
       <h2>useForm Hook Example</h2>
-      <form className="form" onSubmit={handleSubmit}>
-        <BaseInput {...connect('name')} className="some-input-class" type="text" placeholder="Name"/>
-        <BaseInput {...connect('postalCode')} className="some-input-class" type="text" placeholder="Postal Code" onChange={handlePostalCodeChange}/>
-        <BaseInput {...connect('address')} className="some-input-class" type="text" placeholder="Address"/>
-        <button type="submit">Submit</button>
-        <button type="button" onClick={handleReset}>Reset</button>
+      <form className="form" onSubmit={handleSubmit} style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'flex-start' }}>
+        <BasicInput {...connect('name')} type="text" placeholder="Name"/>
+        <BasicInput {...connect('postalCode')} type="text" placeholder="Postal Code" onChange={handlePostalCodeChange}/>
+        <BasicInput {...connect('address')} type="text" placeholder="Address"/>
+        <div>
+          <button type="submit">Submit</button>
+          <button type="button" onClick={handleReset}>Reset</button>
+        </div>
       </form>
     </>
   )
