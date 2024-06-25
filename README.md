@@ -6,6 +6,18 @@ Or have an input display a certain kind of data, but work with a different objec
 <br>
 **Alya Forms can help you achieve that!**
 
+- [Installing](#installing)
+- [Getting started](#getting-started)
+- [Types and Reference](#types-and-reference)
+
+## Installing
+
+```
+npm install alya-forms
+```
+
+## Getting started
+
 ### How does it work
 
 In Alya Forms, your input data is stored in an ```AlyaFormAttribute```. The attribute consists of an object with two properties, ```display``` and ```value```, as shown below:
@@ -112,5 +124,8 @@ The component above receives the four ```connect``` properties and implements th
 > [!TIP]
 > To ensure the best performance for your form, always wrap the input component with React's ```memo()``` function, just like in the example. This ensures that the input will only re-render when its properties change.
 
+## Types and Reference
+
+*To write...*
 
 ---
