@@ -1,18 +1,7 @@
 {
   "name": "alya-forms",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "files": ["dist"],
-  "module": "./dist/index.js",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "clear": "rimraf dist",
-    "prebuild": "rimraf dist",
-    "build": "npx vite build",
-    "watch": "npx vite -w build"
-  },
+  "description": "A powerful forms library for React",
   "keywords": [
     "react",
     "forms",
@@ -20,8 +9,28 @@
     "hook",
     "input"
   ],
-  "author": "Carlos Eduardo Barbosa de Almeida",
+  "homepage": "https://github.com/alyalabs/alya-forms#readme",
+  "bugs": {
+    "url": "https://github.com/alyalabs/alya-forms/issues"
+  },
   "license": "",
+  "author": "Carlos Eduardo Barbosa de Almeida",
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alyalabs/alya-forms.git"
+  },
+  "scripts": {
+    "clear": "rimraf dist",
+    "prebuild": "rimraf dist",
+    "build": "npx vite build",
+    "watch": "npx vite -w build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1"
+  },
   "devDependencies": {
     "@tsconfig/create-react-app": "^2.0.5",
     "@vitejs/plugin-react": "^4.3.1",
@@ -29,8 +38,8 @@
     "vite": "^5.3.1",
     "vite-plugin-dts": "^3.9.1"
   },
-  "dependencies": {
-    "@types/react": "^18.3.3",
-    "react": "^18.3.1"
-  }
+  "type": "module",
+  "module": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts"
 }

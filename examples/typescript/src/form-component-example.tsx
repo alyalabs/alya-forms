@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { Form } from '../../../dist'
-import type { AlyaForm, AlyaFormData, AlyaFormAttribute } from '../../../dist'
+import { Form } from 'alya-forms'
+import type { AlyaForm, AlyaFormData, AlyaFormAttribute } from 'alya-forms'
 
 import BasicInput from './basic-input'
 
