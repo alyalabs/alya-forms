@@ -110,7 +110,7 @@ The component above receives the four ```connect``` properties and implements th
 - ```setAttribute``` is called in handleChange to update the attribute.
 
 > [!TIP]
-> To ensure the best performance for your form, always wrap the component with React's ```memo()``` function, just like in the example. This ensures that the input will only re-render when its properties change.
+> To ensure the best performance for your form, always wrap the input component with React's ```memo()``` function, just like in the example. This ensures that the input will only re-render when its properties change.
 
 
 ---
