@@ -68,11 +68,11 @@ import React, { forwardRef, memo } from 'react'
 
 import type { AlyaFormConnect, AlyaFormAttribute } from 'alya-forms'
 
-type SimpleInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaFormConnect & {
+type BasicInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaFormConnect & {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaFormAttribute) => void
 }
 
-const SimpleInput = memo(forwardRef<HTMLInputElement, SimpleInputProps>(function ({
+const BasicInput = memo(forwardRef<HTMLInputElement, BasicInputProps>(function ({
   name,
   attribute = {},
   setAttribute,
