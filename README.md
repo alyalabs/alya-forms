@@ -102,15 +102,15 @@ const YourInput = memo(forwardRef<HTMLInputElement, YourInputProps>(function ({
 }))
 ```
 
-We can see that the component above receives the four ```connect``` properties and implements them as following:
+The component above receives the four ```connect``` properties and implements them as follows:
 
 - ```name``` is used in the name prop of the input.
 - ```attribute``` is used in the value prop of the input (note that we use the display key).
 - ```useAttribute``` is called to initialize the attribute.
 - ```setAttribute``` is called in handleChange to update the attribute.
 
-> [!TTIP]
-> To make sure that you always have the best performance for your form, make sure to always wrap the component with React's ```memo()``` function, just like in the example. This makes sure that the input will only re-render when its properties change.
+> [!TIP]
+> To ensure the best performance for your form, always wrap the component with React's ```memo()``` function, just like in the example. This ensures that the input will only re-render when its properties change.
 
 
 ---
