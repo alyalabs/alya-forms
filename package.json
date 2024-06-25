@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/alyalabs/alya-forms/issues"
   },
-  "license": "",
+  "license": "MIT",
   "author": "Carlos Eduardo Barbosa de Almeida",
   "files": [
     "dist"
