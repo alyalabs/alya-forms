@@ -8,6 +8,7 @@ Or have an input display a certain kind of data, but work with a different objec
 
 - [Installing](#installing)
 - [Getting started](#getting-started)
+- [Examples](#examples)
 - [Types and Reference](#types-and-reference)
 
 ## Installing
@@ -123,6 +124,10 @@ The component above receives the four ```connect``` properties and implements th
 
 > [!TIP]
 > To ensure the best performance for your form, always wrap the input component with React's ```memo()``` function, just like in the example. This ensures that the input will only re-render when its properties change.
+
+## Examples
+
+*To write...*
 
 ## Types and Reference
 
