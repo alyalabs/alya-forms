@@ -2,13 +2,12 @@
   "name": "alya-forms-react-js-example",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "license": "MIT",
+  "author": "Carlos Eduardo Barbosa de Almeida",
   "scripts": {
     "dev": "npx vite --force",
     "build": "npx vite build"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "alya-forms": "^1.0.0",
     "react": "^18.3.1",
@@ -17,5 +16,6 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.3.1"
-  }
+  },
+  "type": "module"
 }
