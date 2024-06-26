@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "alya-forms": "^1.0.0",
+    "alya-forms": "file:../..",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

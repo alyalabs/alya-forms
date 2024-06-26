@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
 import { useForm } from 'alya-forms'
-import type { AlyaFormData, AlyaFormAttribute } from 'alya-forms'
+import type { AlyaForms } from 'alya-forms'
 
 import BasicInput from './basic-input'
 
 export default function UseFormHookExample() {
-  const [initialData, setInitialData] = useState<AlyaFormData>({
+  const [initialData, setInitialData] = useState<AlyaForms.FormData>({
     name: { display: 'Initial name', value: 'Initial name value' },
   })
 
@@ -23,7 +23,7 @@ export default function UseFormHookExample() {
     console.log(data)
   }, [data])
 
-  function handlePostalCodeChange(event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaFormAttribute) {
+  function handlePostalCodeChange(event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaForms.FormAttribute) {
     if (attribute.value.length > 2) {
       update('address', { display: 'Some address...', value: 'Some address value...' })
     } 
