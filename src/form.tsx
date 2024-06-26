@@ -9,7 +9,7 @@ import type { AlyaForms } from '.'
  * A simple form component that uses the useForm hook.
  *
  * @param {AlyaForms.FormProps} props - Props for the Form component.
- * @param {AlyaForms.FormData} [props.initialData] - The initial data for the form.
+ * @param {AlyaForms.Data} [props.initialData] - The initial data for the form.
  * @param {Function} [props.outputTo] - A function to output the form data.
  * @param {Function} props.render - The function where you will render the form inputs.
  * @param {Function} props.onSubmit - A function to handle the form submission.

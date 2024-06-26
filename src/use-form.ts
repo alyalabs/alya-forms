@@ -5,7 +5,7 @@ import type { AlyaForms } from '.'
 export default function useForm(props: AlyaForms.UseFormProps = {}): AlyaForms.Form {
   const { initialData, outputTo } = props
 
-  const [data, setData] = useState<AlyaForms.FormData>({})
+  const [data, setData] = useState<AlyaForms.Data>({})
 
   useEffect(() => {
     if (initialData && typeof initialData === 'object') {
@@ -26,10 +26,10 @@ export default function useForm(props: AlyaForms.UseFormProps = {}): AlyaForms.F
    * Updates the value of a specific attribute in the data object.
    *
    * @param {string} name - The name of the attribute to update.
-   * @param {AlyaForms.FormAttribute} attribute - The new value for the attribute.
+   * @param {AlyaForms.Attribute} attribute - The new value for the attribute.
    * @return {void}
    */
-  function setAttribute(name: string, attribute: AlyaForms.FormAttribute) {
+  function setAttribute(name: string, attribute: AlyaForms.Attribute) {
     setData((data) => ({
       ...data,
       [name]: attribute
@@ -55,19 +55,19 @@ export default function useForm(props: AlyaForms.UseFormProps = {}): AlyaForms.F
    * Connects to a specific attribute in the data object and returns an object with methods to interact with it.
    *
    * @param {string} name - The name of the attribute to connect to.
-   * @return {AlyaForms.FormConnect} An object with the following properties:
+   * @return {AlyaForms.Connect} An object with the following properties:
    *   - name: The name of the attribute.
    *   - attribute: The value of the attribute in the data object.
    *   - setAttribute: A function to set the value of the attribute.
-   *     - @param {AlyaForms.FormAttribute} attribute - The new value for the attribute.
+   *     - @param {AlyaForms.Attribute} attribute - The new value for the attribute.
    *   - useAttribute: A function to initialize the attribute in the data object.
    */
-  function connect(name: string): AlyaForms.FormConnect {
+  function connect(name: string): AlyaForms.Connect {
     const memo = useMemo(() => {
       return {
         name: name,
-        attribute: data[name] as AlyaForms.FormAttribute,
-        setAttribute: (attribute: AlyaForms.FormAttribute) => setAttribute(name, attribute),
+        attribute: data[name] as AlyaForms.Attribute,
+        setAttribute: (attribute: AlyaForms.Attribute) => setAttribute(name, attribute),
         useAttribute: () => useAttribute(name)
       }
     }, [data[name]])
@@ -79,10 +79,10 @@ export default function useForm(props: AlyaForms.UseFormProps = {}): AlyaForms.F
    * Updates the value of a specific attribute.
    *
    * @param {string} name - The name of the attribute to update.
-   * @param {AlyaForms.FormAttribute} attribute - The new value for the attribute.
+   * @param {AlyaForms.Attribute} attribute - The new value for the attribute.
    * @return {void}
    */
-  function update(name: string, attribute: AlyaForms.FormAttribute) {
+  function update(name: string, attribute: AlyaForms.Attribute) {
     return setAttribute(name, attribute)
   }
 

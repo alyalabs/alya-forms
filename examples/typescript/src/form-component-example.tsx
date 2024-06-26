@@ -6,17 +6,17 @@ import type { AlyaForms } from 'alya-forms'
 import BasicInput from './basic-input'
 
 export default function UseFormExample() {
-  const [initialData, setInitialData] = useState<AlyaForms.FormData>({
+  const [initialData, setInitialData] = useState<AlyaForms.Data>({
     name: { display: 'Initial name', value: 'Initial name value' },
   })
 
-  function handlePostalCodeChange(event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaForms.FormAttribute, form: AlyaForms.Form) {
+  function handlePostalCodeChange(event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaForms.Attribute, form: AlyaForms.Form) {
     if (attribute.value.length > 2) {
       form.update('address', { display: 'Some address...', value: 'Some address value...' })
     } 
   }
 
-  function handleSubmit(data: AlyaForms.FormData) {
+  function handleSubmit(data: AlyaForms.Data) {
     console.log('data to submit:', data)
   }
 

@@ -21,7 +21,7 @@ npm install alya-forms
 
 ### How does it work
 
-In Alya Forms, your input data is stored in an `FormAttribute`. The attribute consists of an object with two properties, `display` and `value`, as shown below:
+In Alya Forms, your input data is stored in an `Attribute`. The attribute consists of an object with two properties, `display` and `value`, as shown below:
 
 ```typescript
 { display: 'Carlos Eduardo', value: '507f1f77bcf86cd799439011' } 
@@ -79,8 +79,8 @@ import React, { forwardRef, memo } from 'react'
 
 import type { AlyaForms } from 'alya-forms'
 
-type BasicInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaForms.FormConnect & {
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaForms.FormAttribute) => void
+type BasicInputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> & AlyaForms.Connect & {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>, attribute: AlyaForms.Attribute) => void
 }
 
 const BasicInput = memo(forwardRef<HTMLInputElement, BasicInputProps>(function ({

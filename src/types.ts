@@ -1,34 +1,34 @@
 
-export type FormAttribute = {
+export type Attribute = {
   display: any;
   value: any;
 }
 
-export type FormData = Record<string, FormAttribute>
+export type Data = Record<string, Attribute>
 
-export type UseFormProps = {
-  initialData?: FormData
-  outputTo?: (data: FormData) => void
-}
-
-export type FormConnect = {
+export type Connect = {
   name: string
-  attribute: FormAttribute
-  setAttribute: (attribute: FormAttribute) => void
+  attribute: Attribute
+  setAttribute: (attribute: Attribute) => void
   useAttribute: () => void
 }
 
 export type Form = {
-  data: FormData
-  connect: (name: string) => FormConnect
-  update: (name: string, attribute: FormAttribute) => void
+  data: Data
+  connect: (name: string) => Connect
+  update: (name: string, attribute: Attribute) => void
   reset: () => void
   clear: () => void
 }
 
+export type UseFormProps = {
+  initialData?: Data
+  outputTo?: (data: Data) => void
+}
+
 export type FormProps = Omit<React.ComponentPropsWithoutRef<'form'>, 'onSubmit'> & UseFormProps & {
   render: (form: Form) => React.ReactNode
-  onSubmit?: (data: FormData) => void
+  onSubmit?: (data: Data) => void
   children?: React.ReactNode
   [key: string]: any
 }
