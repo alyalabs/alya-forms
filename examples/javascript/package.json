@@ -9,7 +9,7 @@
     "build": "npx vite build"
   },
   "dependencies": {
-    "alya-forms": "^1.0.0",
+    "alya-forms": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
